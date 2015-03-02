@@ -42,10 +42,11 @@ class ViewController: UIViewController {
         let operation = sender.currentTitle!
         
         switch operation {
-            case "×": performOperation(multiply)
-            case "÷": performOperation(divide)
-            case "+": performOperation(add)
-            case "−": performOperation(minus)
+        case "×": performOperation { $0 * $1 }
+        case "÷": performOperation { $1 / $0 }
+        case "+": performOperation { $0 + $1 }
+        case "−": performOperation { $1 - $0 }
+        case "√": performOperation {sqrt($0) }
         default: break
         }
     }
@@ -55,21 +56,11 @@ class ViewController: UIViewController {
             displayValue = operation(operandStack.removeLast() ,operandStack.removeLast())
         }
     }
-    
-    func multiply(op1: Double , op2: Double) -> Double {
-        return op1 * op2
-    }
-    
-    func divide(op1: Double, op2: Double) -> Double {
-        return op1 / op2
-    }
-    
-    func add(op1: Double, op2: Double) -> Double {
-        return op1 + op2
-    }
-    
-    func minus(op1: Double, op2: Double) -> Double {
-        return op1 - op2
+
+    func performOperation(operation: (Double) -> Double) {
+        if operandStack.count >= 1 {
+            displayValue = operation(operandStack.removeLast())
+        }
     }
     
     var displayValue: Double {
