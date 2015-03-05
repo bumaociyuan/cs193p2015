@@ -65,7 +65,6 @@ class CalculatorBrain {
                 opStack = newOpStack
             }
         }
-        
     }
     
     
