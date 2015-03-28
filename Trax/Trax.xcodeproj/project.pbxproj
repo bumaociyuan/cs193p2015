@@ -15,6 +15,7 @@
 		FB93658F1AC5A593009614C2 /* TraxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93658E1AC5A593009614C2 /* TraxTests.swift */; };
 		FB9365CB1AC6525E009614C2 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9365CA1AC6525E009614C2 /* GPX.swift */; };
 		FB9365CD1AC653A5009614C2 /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9365CC1AC653A5009614C2 /* MKGPX.swift */; };
+		FBC0C28A1AC6955D000EF979 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0C2891AC6955D000EF979 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		FB93658E1AC5A593009614C2 /* TraxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxTests.swift; sourceTree = "<group>"; };
 		FB9365CA1AC6525E009614C2 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
 		FB9365CC1AC653A5009614C2 /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGPX.swift; sourceTree = "<group>"; };
+		FBC0C2891AC6955D000EF979 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		FB9365761AC5A593009614C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FBC0C2891AC6955D000EF979 /* ImageViewController.swift */,
 				FB9365CA1AC6525E009614C2 /* GPX.swift */,
 				FB9365811AC5A593009614C2 /* LaunchScreen.xib */,
 				FB93657F1AC5A593009614C2 /* Images.xcassets */,
@@ -220,6 +223,7 @@
 			files = (
 				FB93657B1AC5A593009614C2 /* ViewController.swift in Sources */,
 				FB9365CD1AC653A5009614C2 /* MKGPX.swift in Sources */,
+				FBC0C28A1AC6955D000EF979 /* ImageViewController.swift in Sources */,
 				FB9365791AC5A593009614C2 /* AppDelegate.swift in Sources */,
 				FB9365CB1AC6525E009614C2 /* GPX.swift in Sources */,
 			);
