@@ -13,6 +13,8 @@
 		FB9365801AC5A593009614C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB93657F1AC5A593009614C2 /* Images.xcassets */; };
 		FB9365831AC5A593009614C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB9365811AC5A593009614C2 /* LaunchScreen.xib */; };
 		FB93658F1AC5A593009614C2 /* TraxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93658E1AC5A593009614C2 /* TraxTests.swift */; };
+		FB9365CB1AC6525E009614C2 /* GPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9365CA1AC6525E009614C2 /* GPX.swift */; };
+		FB9365CD1AC653A5009614C2 /* MKGPX.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9365CC1AC653A5009614C2 /* MKGPX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		FB9365881AC5A593009614C2 /* TraxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB93658D1AC5A593009614C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB93658E1AC5A593009614C2 /* TraxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraxTests.swift; sourceTree = "<group>"; };
+		FB9365CA1AC6525E009614C2 /* GPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPX.swift; sourceTree = "<group>"; };
+		FB9365CC1AC653A5009614C2 /* MKGPX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKGPX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				FB9365781AC5A593009614C2 /* AppDelegate.swift */,
 				FB93657A1AC5A593009614C2 /* ViewController.swift */,
 				FB93657C1AC5A593009614C2 /* Main.storyboard */,
+				FB9365CC1AC653A5009614C2 /* MKGPX.swift */,
 				FB9365761AC5A593009614C2 /* Supporting Files */,
 			);
 			path = Trax;
@@ -88,6 +93,7 @@
 		FB9365761AC5A593009614C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FB9365CA1AC6525E009614C2 /* GPX.swift */,
 				FB9365811AC5A593009614C2 /* LaunchScreen.xib */,
 				FB93657F1AC5A593009614C2 /* Images.xcassets */,
 				FB9365771AC5A593009614C2 /* Info.plist */,
@@ -213,7 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB93657B1AC5A593009614C2 /* ViewController.swift in Sources */,
+				FB9365CD1AC653A5009614C2 /* MKGPX.swift in Sources */,
 				FB9365791AC5A593009614C2 /* AppDelegate.swift in Sources */,
+				FB9365CB1AC6525E009614C2 /* GPX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +415,7 @@
 				FB9365941AC5A593009614C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB9365951AC5A593009614C2 /* Build configuration list for PBXNativeTarget "TraxTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +424,7 @@
 				FB9365971AC5A593009614C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
