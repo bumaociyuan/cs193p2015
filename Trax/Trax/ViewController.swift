@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate {
-
+    
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
             mapView.mapType = .Satellite
@@ -36,6 +36,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentation
             let coordinate = mapView.convertPoint(sender.locationInView(mapView), toCoordinateFromView: mapView)
             let waypoint = EditableWaypoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
             waypoint.name = "Dropped"
+            //            waypoint.links.append(GPX.Link(href: "https://www.baidu.com/img/bdlogo.png"))
             mapView.addAnnotation(waypoint)
         }
     }
@@ -73,7 +74,7 @@ class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentation
         
         view.leftCalloutAccessoryView = nil
         view.rightCalloutAccessoryView = nil
-
+        
         if let waypoint = annotation as? GPX.Waypoint {
             if waypoint.thumbnailURL != nil {
                 view.leftCalloutAccessoryView = UIButton(frame: Constants.LeftCalloutFrame)
@@ -100,7 +101,9 @@ class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.ShowImageSegue {
             if let waypoint = (sender as? MKAnnotationView)?.annotation as? GPX.Waypoint {
-                if let ivc = segue.destinationViewController as? ImageViewController {
+                if let wivc = segue.destinationViewController as? WaypointImageViewController {
+                    wivc.waypoint = waypoint
+                } else if let ivc = segue.destinationViewController as? ImageViewController {
                     ivc.imageURL = waypoint.imageURL
                     ivc.title = waypoint.name
                 }
@@ -108,10 +111,10 @@ class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentation
         } else if segue.identifier == Constants.EditWaypointSegue {
             if let waypoint = (sender as? MKAnnotationView)?.annotation as? EditableWaypoint {
                 if let ewvc = segue.destinationViewController.contentViewController as? EditWaypointViewController {
-                   if let ppc = ewvc.popoverPresentationController {
-                    ppc.delegate = self
-                    let coordinatePoint = mapView.convertCoordinate(waypoint.coordinate, toPointToView: mapView)
-                    ppc.sourceRect = (sender as MKAnnotationView).popoverSourceRectForCoordinatePoint(coordinatePoint)
+                    if let ppc = ewvc.popoverPresentationController {
+                        ppc.delegate = self
+                        let coordinatePoint = mapView.convertCoordinate(waypoint.coordinate, toPointToView: mapView)
+                        ppc.sourceRect = (sender as MKAnnotationView).popoverSourceRectForCoordinatePoint(coordinatePoint)
                         let minimumSize = ewvc.view.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
                         ewvc.preferredContentSize = CGSize(width: Constants.EditWaypointPopoverWidth, height: minimumSize.height)
                     }
@@ -137,6 +140,12 @@ class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentation
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
         if let waypoint = view.annotation as? GPX.Waypoint {
+            if let url = waypoint.thumbnailURL {
+                if view.leftCalloutAccessoryView == nil {
+                    view.leftCalloutAccessoryView = UIButton(frame: Constants.LeftCalloutFrame)
+                }
+            }
+            
             if let thumbnailImageButton = view.leftCalloutAccessoryView as? UIButton {
                 if let imageData = NSData(contentsOfURL: waypoint.thumbnailURL!) {
                     if let image = UIImage(data: imageData) {
@@ -158,7 +167,8 @@ class ViewController: UIViewController, MKMapViewDelegate, UIPopoverPresentation
             }
         }
         
-         gpxURL = NSURL(string: "http://cs193p.stanford.edu/Vacation.gpx") // for demo/debug/testing
+        gpxURL = NSURL(string: "http://cs193p.stanford.edu/Vacation.gpx")
+        // for demo/debug/testing
     }
 }
 

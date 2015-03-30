@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB6AFF231AC93E7D005CC898 /* WaypointImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6AFF221AC93E7D005CC898 /* WaypointImageViewController.swift */; };
+		FB6AFF251AC93FBF005CC898 /* SimpleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6AFF241AC93FBF005CC898 /* SimpleMapViewController.swift */; };
 		FB9365791AC5A593009614C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9365781AC5A593009614C2 /* AppDelegate.swift */; };
 		FB93657B1AC5A593009614C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB93657A1AC5A593009614C2 /* ViewController.swift */; };
 		FB93657E1AC5A593009614C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB93657C1AC5A593009614C2 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB6AFF221AC93E7D005CC898 /* WaypointImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaypointImageViewController.swift; sourceTree = "<group>"; };
+		FB6AFF241AC93FBF005CC898 /* SimpleMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleMapViewController.swift; sourceTree = "<group>"; };
 		FB9365731AC5A593009614C2 /* Trax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9365771AC5A593009614C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9365781AC5A593009614C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,8 +91,10 @@
 			children = (
 				FB9365781AC5A593009614C2 /* AppDelegate.swift */,
 				FB93657A1AC5A593009614C2 /* ViewController.swift */,
+				FB6AFF221AC93E7D005CC898 /* WaypointImageViewController.swift */,
 				FBC0C28B1AC6A414000EF979 /* EditWaypointViewController.swift */,
 				FB93657C1AC5A593009614C2 /* Main.storyboard */,
+				FB6AFF241AC93FBF005CC898 /* SimpleMapViewController.swift */,
 				FB9365CC1AC653A5009614C2 /* MKGPX.swift */,
 				FB9365761AC5A593009614C2 /* Supporting Files */,
 			);
@@ -225,11 +231,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB93657B1AC5A593009614C2 /* ViewController.swift in Sources */,
+				FB6AFF231AC93E7D005CC898 /* WaypointImageViewController.swift in Sources */,
 				FB9365CD1AC653A5009614C2 /* MKGPX.swift in Sources */,
 				FBC0C28C1AC6A414000EF979 /* EditWaypointViewController.swift in Sources */,
 				FBC0C28A1AC6955D000EF979 /* ImageViewController.swift in Sources */,
 				FB9365791AC5A593009614C2 /* AppDelegate.swift in Sources */,
 				FB9365CB1AC6525E009614C2 /* GPX.swift in Sources */,
+				FB6AFF251AC93FBF005CC898 /* SimpleMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
